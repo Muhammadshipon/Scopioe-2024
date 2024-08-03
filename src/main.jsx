@@ -6,11 +6,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import AuthProvider from './provider/AuthProvider';
+import CreateAccount from './pages/CreateAccount';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <CreateAccount></CreateAccount>
   },
 ]);
 
