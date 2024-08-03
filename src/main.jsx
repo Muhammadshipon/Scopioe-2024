@@ -8,6 +8,8 @@ import {
 import AuthProvider from './provider/AuthProvider';
 import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
+import HomePage from './pages/HomePage';
+import ResetPassword from './pages/ResetPassword';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
   {
     path:"/login",
     element:<Login></Login>
+  },
+  {
+   path:"/home",
+   element:<HomePage></HomePage>
+  },
+  {
+    path:"/reset-password",
+    element:<ResetPassword></ResetPassword>
   }
 ]);
 
