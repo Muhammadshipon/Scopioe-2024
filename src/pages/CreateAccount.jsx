@@ -37,7 +37,15 @@ const CreateAccount = () => {
                 {/* image section  */}
 <section className="w-1/2">
 <div className="   h-[750px] rounded-3xl flex items-center justify-center bg-cover bg-center"  style={{ backgroundImage:`url(${bgImgLg})`}}>
-<OverlayContainer></OverlayContainer>
+
+<OverlayContainer link='Create Account' subTitle='Fill in Your Information' ></OverlayContainer>
+           {/* dots  */}
+<div className="flex gap-3 absolute -bottom-40">
+  <span className="w-2 h-2 bg-blue-400  rounded-full"></span>
+  <span className="w-2 h-2 bg-gray-50  rounded-full"></span>
+  <span className="w-2 h-2 bg-gray-50  rounded-full"></span>
+</div>
+
 </div>
 </section>
 
@@ -81,7 +89,7 @@ const CreateAccount = () => {
           </div>
           : 
          <div className="px-14 ">
-           <OverlayContainer ></OverlayContainer>
+          <OverlayContainer link='Create Account' subTitle='Fill in Your Information' ></OverlayContainer>
          </div>
         }
       

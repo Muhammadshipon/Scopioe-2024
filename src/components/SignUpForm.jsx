@@ -60,7 +60,7 @@ const SignUpForm = () => {
        </div>  
 
     <div className="form-control mt-6  mx-auto">
-      <button className="btn bg-blue-500 text-white w-[270px] ">Sign up</button>
+      <button className="btn bg-blue-500 text-white w-[270px] text-xl">Sign up</button>
     </div>
     <p className="text-center">Already Have an Account? <span className="text-blue-600" ><Link to='/login'>Log in</Link></span></p>
   </form>
