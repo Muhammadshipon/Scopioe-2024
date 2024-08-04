@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const LoginForm = () => {
   const [showPassword,setShowPassword] = useState(false);
   const navigate = useNavigate()
-  const {signIn,googleSignIn,	} = useContext(AuthContext);
+  const {signIn,googleSignIn,facebookSignIn} = useContext(AuthContext);
 
   const handleSignIn = e =>{
     e.preventDefault();
@@ -105,6 +105,33 @@ const LoginForm = () => {
 			
     })
 	} 
+
+  const handleFacebookSignIn=()=>{
+    facebookSignIn()
+    .then(result=>{
+      console.log(result.user);
+			navigate("/home")
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Sign In successfully",
+        showConfirmButton: false,
+        timer: 3000
+      });
+		
+    })
+    .catch(error=>{
+      console.error(error.message);
+      Swal.fire({
+        position: "top",
+        icon: "error",
+        title: error.message,
+        showConfirmButton: false,
+        timer: 3000
+      });
+			
+    })
+  }
   return (
    <div className="pb-8 lg:pb-0">
       <h2 className="font-bold text-center  pt-10 lg:hidden text-2xl">Log In To Your Account</h2>
@@ -112,9 +139,9 @@ const LoginForm = () => {
                {/* social media sign in  */}
      <div className="flex justify-around py-10">
                  {/* google  */}
-      <button onClick={()=>handleGoogleSignIn()} className="flex items-center gap-1 bg-gradient-to-r from-gray-300 to-white px-7 py-2 rounded-xl hover:scale-90 shadow-xl  border border-r-2 border-gray-300"><FcGoogle className="text-2xl"/><span className="text-gray-500 font-bold text-xl">Google</span></button>
+      <button onClick={handleGoogleSignIn} className="flex items-center gap-1 bg-gradient-to-r from-gray-300 to-white px-7 py-2 rounded-xl hover:scale-90 shadow-xl  border border-r-2 border-gray-300"><FcGoogle className="text-2xl"/><span className="text-gray-500 font-bold text-xl">Google</span></button>
                   {/* facebook  */}
-      <button className="flex items-center gap-1 bg-gradient-to-r from-blue-500 to-blue-700 text-white px-5 py-2 rounded-xl hover:scale-90 shadow-xl"><FaFacebook className="text-white text-2xl" /><span className="text-white font-bold text-xl">Facebook</span></button>
+      <button onClick={handleFacebookSignIn} className="flex items-center gap-1 bg-gradient-to-r from-blue-500 to-blue-700 text-white px-5 py-2 rounded-xl hover:scale-90 shadow-xl"><FaFacebook className="text-white text-2xl" /><span className="text-white font-bold text-xl">Facebook</span></button>
       </div>       
       <div className="divider">OR Continue With Email</div>   
                 {/* form             */}

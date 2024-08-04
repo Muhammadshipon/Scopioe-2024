@@ -10,6 +10,7 @@ import CreateAccount from './pages/CreateAccount';
 import Login from './pages/Login';
 import HomePage from './pages/HomePage';
 import ResetPassword from './pages/ResetPassword';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path:"/reset-password",
     element:<ResetPassword></ResetPassword>
+  },
+  {
+    path:"/privacy-policy",
+    element:<PrivacyPolicy></PrivacyPolicy>
   }
 ]);
 
