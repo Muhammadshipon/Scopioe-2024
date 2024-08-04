@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import HomePage from './pages/HomePage';
 import ResetPassword from './pages/ResetPassword';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import PrivateRoute from './Routes/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
    path:"/home",
-   element:<HomePage></HomePage>
+   element:<PrivateRoute><HomePage></HomePage></PrivateRoute>
   },
   {
     path:"/reset-password",
